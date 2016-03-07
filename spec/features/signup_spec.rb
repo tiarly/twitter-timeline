@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Signup', feature: true do
   let(:user) { FactoryGirl.build(:user) }
 
-  scenario 'Show succesful signup message' do
+  scenario 'When filing in all required fields correctly' do
     visit '/users/sign_up'
 
     fill_in 'Email', with: user.email
