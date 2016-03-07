@@ -1,0 +1,18 @@
+<section>
+  <% if @tweets.any? %>
+    <%= content_tag :h1 do %>
+      <%= image_tag @tweets.first.user.profile_image_url %>
+      <%= "These are the latest tweets for #{@username}" %>
+    <% end %>
+  <ul class="tweets">
+    <% @tweets.each do |tweet| %>
+      <%= content_tag :li do %>
+        <%= tweet.text %>
+        <%= content_tag :small, l(tweet.created_at, format: :short) %>
+      <% end %>
+    <% end %>
+  </ul>
+  <% else %>
+    No tweets found.
+  <% end %>
+</section>

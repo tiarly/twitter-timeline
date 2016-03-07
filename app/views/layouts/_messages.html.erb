@@ -1,5 +1,5 @@
 <% flash.each do |name, msg| %>
-  <div class="mesasges">
+  <div class="messages">
     <div class="alert alert-<%= name == 'notice' ? "success" : "error" %> fade in">
       <%= content_tag :div, msg %>
     </div>

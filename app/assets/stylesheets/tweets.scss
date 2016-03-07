@@ -1,3 +1,29 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper {
+  width: 100%;
+  text-align: center;
+
+  .container {
+    width: 975px;
+    margin: 0 auto;
+
+    section {
+      margin: 15px;
+    }
+  }
+}
+
+input {
+  text-align: center;
+}
+
+.tweets {
+  li {
+    margin: 15px;
+  }
+  small {
+    color: #8899a6;
+  }
+}

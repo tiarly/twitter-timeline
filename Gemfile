@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'devise'
+gem 'twitter'
 
 group :development, :test do
   gem 'byebug'
@@ -17,6 +18,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
 end
 
 group :production do

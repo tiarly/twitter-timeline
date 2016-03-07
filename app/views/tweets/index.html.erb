@@ -1,2 +1,8 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<div class="container">
+  <%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :username, @username %>
+    <%= button_tag 'Fetch Teets' %>
+  <% end %>
+
+  <%= render 'tweets' %>
+</div>
