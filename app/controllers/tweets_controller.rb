@@ -22,6 +22,8 @@ class TweetsController < ApplicationController
   end
 
   def fetch_tweets
-    TwitterTimeline.client.user_timeline(@username, count: 25)
+    Rails.cache.fetch(@username, expires_in: 5.minutes) do
+      TwitterTimeline.client.user_timeline(@username, count: 25)
+    end
   end
 end
