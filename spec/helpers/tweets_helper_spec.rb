@@ -1,15 +1,18 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TweetsHelper. For example:
-#
-# describe TweetsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe TweetsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#tweet_with_linked_mention' do
+    it 'returns a processed tweet with a anchor tag' do
+      tweet = 'hello @tiarly, how are you?'
+      tweet_link = "<a href=\"http://www.twitter.com/@tiarly\">@tiarly</a"
+
+      expect(helper.tweet_with_linked_mention(tweet)).to include(tweet_link)
+    end
+
+    it 'returns the same tweet body when no mentions are found' do
+      tweet = 'hello tiarly, how are you?'
+
+      expect(helper.tweet_with_linked_mention(tweet)).to eq tweet
+    end
+  end
 end

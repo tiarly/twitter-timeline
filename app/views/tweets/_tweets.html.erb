@@ -7,7 +7,7 @@
   <ul class="tweets">
     <% @tweets.each do |tweet| %>
       <%= content_tag :li do %>
-        <%= tweet.text %>
+        <%= tweet_with_linked_mention(tweet.text) %>
         <%= content_tag :small, l(tweet.created_at, format: :short) %>
       <% end %>
     <% end %>
