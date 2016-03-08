@@ -1,6 +1,10 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$default-font-size: 16px;
+$default-border-color: #e1e8ed;
+
 .wrapper {
   width: 100%;
   text-align: center;
@@ -15,13 +19,37 @@
   }
 }
 
-input {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   text-align: center;
+  height: 34px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid $default-border-color;
+  font-size: $default-font-size;
+}
+
+button {
+  height: 35px;
+  background: #1b95e0;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
 .tweets {
   li {
+    font-size: $default-font-size;
     margin: 15px;
+    border-bottom: 1px solid $default-border-color;
+    min-height: 50px;
+    padding: 9px 12px;
+
+    img {
+      float: left;
+    }
   }
   small {
     color: #8899a6;
